@@ -42,3 +42,5 @@ Railsのルーターでは、サーバーへのリクエストをマッチさせ
 Railsのルーティングは、ルーティングファイルの「上からの記載順に」マッチする。
 このため、たとえばresources :photosというルーティングがget 'photos/poll'よりも上の行にあれば、resources行のshowアクションがget行の記述よりも優先されるので、
 get行のルーティングは有効にならない。これを修正するには、get行をresources行 よりも上 の行に移動する。これにより、get行がマッチするようになる。
+
+参照　https://railsguides.jp/routing.html#web%E4%B8%8A%E3%81%AE%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9
