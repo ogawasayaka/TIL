@@ -43,4 +43,15 @@ Railsのルーティングは、ルーティングファイルの「上からの
 このため、たとえばresources :photosというルーティングがget 'photos/poll'よりも上の行にあれば、resources行のshowアクションがget行の記述よりも優先されるので、
 get行のルーティングは有効にならない。これを修正するには、get行をresources行 よりも上 の行に移動する。これにより、get行がマッチするようになる。
 
+### パスとURL用ヘルパー
+リソースフルなルーティングを作成すると、アプリケーションのコントローラで多くのヘルパーが利用できるようになる。　　
+resources :photosというルーティングを例に取ってみる。
+
+- photos_pathは/photosを返す
+- new_photo_pathは/photos/newを返す
+- edit_photo_path(:id)は/photos/:id/editを返す（edit_photo_path(10)であれば/photos/10/editを返す）
+- photo_path(:id)は/photos/:idを返す（photo_path(10)であれば/photos/10を返す）
+
+これらの_pathヘルパーには、それぞれに対応する_urlヘルパー（photos_urlなど）もあります。_urlヘルパーは、同じパスの前に「現在のホスト名」「ポート番号」「パスのプレフィックス」を追加して返す。
+
 参照　https://railsguides.jp/routing.html#web%E4%B8%8A%E3%81%AE%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9
